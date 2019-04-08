@@ -1,0 +1,31 @@
+Begin by Asking:
+
+    What is the scope of the need or problem I wish to investigate?
+    Who is this for? Who is impacted or affected by this data? Who would benefit from this model?
+    What are my goals for this investigation?
+    What does success look like? How will I know if my model performs well?
+    Where will I find data for this project? Is the data available?
+
+For the Bonus, Ask:
+
+    What format is the data in? What specific steps do I need to take to access it?
+    How will I explain this project to outside audiences?
+
+Other Tips:
+
+    For your 1st potential topic, start with an idea, then look for potential data that could be used to support that idea.
+    For your 2nd potential topic, reverse the process; look for interesting data and then extrapolate problems it could solve and audiences it could impact.
+
+
+## Structured Web Data Extraction Dataset 
+Link: http://academictorrents.com/details/411576c7e80787e4b40452360f5f24acba9b5159
+Filename: [Dataset] SWDE-Structured Web Data Extraction.
+Sub-folder: groundtruth
+
+##
+Link:
+Filename: [Dataset] PovStats_csv-Workbank
+
+## Online News Popularity Data Set
+Link: http://academictorrents.com/details/95d3b03397a0bafd74a662fe13ba3550c13b7ce1
+Filename: [Dataset] Online News Popularity Data Set
