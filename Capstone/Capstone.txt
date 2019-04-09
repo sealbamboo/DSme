@@ -29,3 +29,60 @@ Filename: [Dataset] PovStats_csv-Workbank
 ## Online News Popularity Data Set
 Link: http://academictorrents.com/details/95d3b03397a0bafd74a662fe13ba3550c13b7ce1
 Filename: [Dataset] Online News Popularity Data Set
+
+#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------
+
+Topic 1:
+- Problem Statement
+    + File contains an flat information
+    + Details are grouped in High-income, Low-income, Developing, etc...
+
+- Potential Audience
+
+- Goals
+    + Pivotting table these information 
+    + Find any possible solution to upgrade any country from lower level to upper level
+    + Find any model for any country with high poverty percentage.
+
+- Success Metrics
+
+- Data Source(s)
+    + Link: https://datacatalog.worldbank.org/dataset/poverty-and-equity-database
+    + File: [DataSet]PovStats_csv-Workbank.zip
+    
+
+Topic 2:
+- Problem Statement
+    + Historic Alerts dataset is included bus & train
+
+- Potential Audience
+    + Business Planner
+    + Technician Team
+
+- Goals
+    + Build an separated alert model for bus & train 
+    + Distinct the alert type (public days, track-issues, signal-issues, etc...)
+    + Find any possible solutions
+
+- Success Metrics
+
+- Data Source(s)
+    + Link: https://opendata.transport.nsw.gov.au/dataset/historic-alerts
+    + csv: alerts_2017_jun_to_dec.csv
+
+
+Topic 3:
+- Problem Statement
+    + Health Twitter from different Source
+    + Combine into standard form.
+
+- Potential Audience
+
+- Goals
+
+- Success Metrics
+
+- Data Source(s)
