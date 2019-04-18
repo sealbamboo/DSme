@@ -63,9 +63,9 @@ Topic 2:
     + Technician Team
 
 - Goals
-    + Build an separated alert model for bus & train 
-    + Distinct the alert type (public days, track-issues, signal-issues, etc...)
-    + Find any possible solutions
+    + Build an separated alert model for bus & train ##WRONG
+    + Distinct the alert type (public days, track-issues, signal-issues, etc...) ##WRONG
+    + Find any possible solutions ##WRONG
 
 - Success Metrics
 
