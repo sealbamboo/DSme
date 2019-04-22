@@ -16,8 +16,8 @@ def merge_columns_to_one(df,list_added_columns, new_column_name):
 
 #---------------------------------------------------------------------
 # Generate a mask for the upper triangle
-mask = np.zeros_like(corr, dtype=np.bool)
-mask[np.triu_indices_from(mask)] = True
+# mask = np.zeros_like(corr, dtype=np.bool)
+# mask[np.triu_indices_from(mask)] = True
 
 #---------------------------------------------------------------------
 # This function does a pairplot across your variables with the color
@@ -43,5 +43,67 @@ def bcw_pairplotter(df, variables, sample_frac=0.3):
 
 #---------------------------------------------------------------------
 # Count frequency of value in list
-from itertools import groupby
-[len(list(group)) for key, group in groupby(a)]
+# from itertools import groupby
+# [len(list(group)) for key, group in groupby(a)]
+
+
+#---------------------------------------------------------------------
+
+def correlation_heat_map(df):
+    corrs = df.corr()
+
+    # Set the default matplotlib figure size:
+    fig, ax = plt.subplots(figsize=(25,30))
+
+    # Generate a mask for the upper triangle (taken from seaborn example gallery)
+    mask = np.zeros_like(corrs, dtype=np.bool)
+    mask[np.triu_indices_from(mask)] = True
+
+    # Plot the heatmap with seaborn.
+    # Assign the matplotlib axis the function returns. This will let us resize the labels.
+    ax = sns.heatmap(corrs, mask=mask, annot=True)
+
+    # Resize the labels.
+    ax.set_xticklabels(ax.xaxis.get_ticklabels(), fontsize=14, rotation=30)
+    ax.set_yticklabels(ax.yaxis.get_ticklabels(), fontsize=14, rotation=0)
+
+    # If you put plt.show() at the bottom, it prevents those useless printouts from matplotlib.
+    plt.show()
+    
+
+
+#---------------------------------------------------------------------
+def plotting_features_vs_target(features, df, x, y):
+    # define number of subplot
+    num_feature = len(features)
+    f, axes = plt.subplots(1, num_feature, sharey=True)
+
+    # plotting
+    for i in range(0, num_feature):
+        print("-i: ", i,"\n")
+        axes[i].scatter(x[features[i]], y)
+        axes[i].set_title(features[i])
+
+    plt.show()
+
+def plotting_features(features,df, xAxis, yAxis):
+        # Count features
+        n_features = len(features)
+
+        # Calulate rows
+        n_rows = round(n_features/4)
+
+        # Create subplots
+        fig, ax = plt.subplots(n_rows, 4, figsize=(17,14), sharey=True)
+
+        # Plotting
+        i_row = 1
+        for i_ in range(0, n_features):
+                if i_//4 == 0:
+                        df.plot(x = yAxis,
+                                kind='bar', figsize=fig, subplots=True,
+                                ax = ax[i_row, i_], orient='v', color='b')
+                else:
+                        i_row += 1
+
+        plt.show()
