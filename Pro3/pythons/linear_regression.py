@@ -1,11 +1,15 @@
 
-def my-linear-regression(house):
+def my_linear_regression(X, y):
 
     # RETURN value
     result = dict()
 
-    # Split data-set into trainging (70%) and testing set (30%)
-    X_train, X_test, y_train, y_test = train_test_split(Xs, y, test_size=0.3)
+    # Standarize selected features
+    ss = StandardScaler()
+    Xs = ss.fit_transform(X)
+
+    # Split data-set into trainging (80%) and testing set (20%)
+    X_train, X_test, y_train, y_test = train_test_split(Xs, y, test_size=0.2)
 
     #----------------------------------------------
     #### DEFAULT MODEL
