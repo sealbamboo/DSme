@@ -42,4 +42,8 @@ def my_linear_regression(X, y):
     result.update({'Ridge': score_ridge_trained})
 
     #----------------------------------------------
+    # Baseline
+    #----------------------------------------------
+    result.update({'Baseline': np.mean(y_test)})
+
     return result

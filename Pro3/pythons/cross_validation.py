@@ -1,17 +1,30 @@
 def cross_validation(X,y):
 
+    # Global Variable
+    CV = 10
+
     # Standarize selected features
     ss = StandardScaler()
     Xs = ss.fit_transform(X)
     
     # Linear Regression
     linreg = LinearRegression()
+    linreg.fit(Xs, y)
 
-    # Cross Validation Score
-    linreg_scores = cross_val_score(linreg, Xs, y, cv=10)
+    # K-Fold Cross Validation Score
+    linreg_scores = cross_val_score(linreg, Xs, y, cv=CV)
 
+    print("K-Fold Cross-validated scores: \n")
     print(linreg_scores)
     print("Score Mean: ", np.mean(linreg_scores))
+
+    # Make cross validated predictions on the test sets
+    predicitons = cross_val_predict(linreg, Xs, y, cv = CV)
+    plt.scatter(y, predicitons)
+
+    # Manual calculate the R2
+    R2 = metrics.r2_score(y, predictions)
+    print("Cross-Predicted R2: ", R2)
     print("-----------------------------------------------------")
     print("\n")
 
