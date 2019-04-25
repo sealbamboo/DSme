@@ -73,7 +73,7 @@ def correlation_heat_map(df):
 
 
 #---------------------------------------------------------------------
-def plotting_features_vs_target(features, df, x, y):
+def plotting_features_vs_target(features, x, y):
     # define number of subplot
     num_feature = len(features)
     f, axes = plt.subplots(1, num_feature, sharey=True)

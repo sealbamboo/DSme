@@ -1,3 +1,5 @@
+from plotting import correlation_heat_map
+
 
 def feature_dataframe(df_target):
     # Return DataFrame
@@ -60,6 +62,7 @@ def feature_dataframe(df_target):
     # Create Heatmap to see the correlations
     # correlation_heat_map(df_numerics)
     plt.subplots(figsize=(30,30))
-    sns.heatmap(df_numerics.corr(), annot=True)
+    correlation_heat_map(df_numerics.corr())
+    # sns.heatmap(df_numerics.corr(), annot=True)
 
     return df_numerics
