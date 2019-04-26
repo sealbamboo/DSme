@@ -60,8 +60,23 @@ def correlation_heat_map(df):
 
 #---------------------------------------------------------------------
 # Pair-Plot
-def my_pair_plot_4_sale_price(df,x):
-    sns.pairplot(df, x_vars=x, y_vars=['SalePrice'],size=4,kind='reg');
+def m_pair_plot(df):
+    sns.pairplot(df, kind='bar')
+
+
+#---------------------------------------------------------------------
+# Box-Plot
+def m_box_plot(df):
+    fig = plt.figure(figsize=(26,20))
+    ax = fig.gca()
+
+    sns.boxplot(data=df, orient='v',
+                    fliersize=8, linewidth=1.5, notch=False,
+                    saturation=0.5, ax=ax)
+
+    ax.set_title('DataFrame boxplot\n', fontsize=20)
+
+    plt.show()
 
 
 #---------------------------------------------------------------------
@@ -80,8 +95,8 @@ def plotting_features_vs_target(features, x, y):
         # axes[i].scatter(x[features[i]], y)
         # axes[i].set_title(features[i])
     plot_count = 0
-    for i in range(4):
-        for j in range(4):
+    for i in range(columns):
+        for j in range(columns):
             if plot_count < num_feature:
                 sns.barplot(x=x[features[i]], y=y, orient='v', ax=axes[i][j], color='c')
             plot_count += 1     

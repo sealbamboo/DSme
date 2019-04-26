@@ -47,6 +47,8 @@ Topic 1:
     + Find any possible solution to upgrade any country from lower level to upper level
     + Find any model for any country with high poverty percentage.
 
+-> analytic
+-> not DS
 - Success Metrics
 
 - Data Source(s)
@@ -59,30 +61,56 @@ Topic 2:
     + Historic Alerts dataset is included bus & train
 
 - Potential Audience
-    + Business Planner
-    + Technician Team
+    + 
 
 - Goals
     + Build an separated alert model for bus & train ##WRONG
     + Distinct the alert type (public days, track-issues, signal-issues, etc...) ##WRONG
     + Find any possible solutions ##WRONG
 
+    + Rate scale of alert out of 10
+    + Predict the level of type.
+
+-> add 1-2 ideas
+-> natural language procession
 - Success Metrics
 
 - Data Source(s)
     + Link: https://opendata.transport.nsw.gov.au/dataset/historic-alerts
     + csv: alerts_2017_jun_to_dec.csv
 
-
+#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------
 Topic 3:
 - Problem Statement
-    + Health Twitter from different Source
-    + Combine into standard form.
+    + Can we sorted out what kind of content?
+    + Which topics are good for citation?
+    + 
 
 - Potential Audience
+    + 
 
 - Goals
+    + Category content (Tips, Research, Ideas, Compare, etc.)
+    + How much the idea good for?
+    + Rate out from the scale of 10
 
+-> ieda
 - Success Metrics
 
-- Data Source(s)
+- Data Source(s):
+    + Link:
+    + File: Health-Tweets folder
+
+#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------

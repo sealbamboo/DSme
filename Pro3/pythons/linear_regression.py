@@ -1,9 +1,20 @@
 from cross_validation import cross_validation
+from regularization import regression_regularization
 
-def my_linear_regression(X, y):
+def my_linear_regression(X, y, regular=False):
 
     # RETURN value
     result = dict()
+
+    #----------------------------------------------
+    #### DEFAULT NON-STANDARIZE MODEL
+    # training model
+    linear = LinearRegression()
+    n_std_linear = linear.fit(X, y)
+
+    # Evaluating model
+    s_std_score_trained = n_std_linear.score(X, y)
+    result.update({'Base woStd': s_std_score_trained})
 
     # Standarize selected features
     ss = StandardScaler()
@@ -12,13 +23,12 @@ def my_linear_regression(X, y):
     #----------------------------------------------
     #### DEFAULT MODEL
     # training model
-    linear = LinearRegression()
     linear.fit(Xs, y)
 
     # Evaluating model
     pred = linear.predict(Xs)
     score_trained = linear.score(Xs, y)
-    result.update({'Base': score_trained})
+    result.update({'Base wStd': score_trained})
 
     # Cross-validation
     cross_val = cross_validation(linear, Xs, y)
@@ -48,5 +58,8 @@ def my_linear_regression(X, y):
     # # Baseline
     # #----------------------------------------------
     # result.update({'Baseline': np.mean(y)})
+
+    if (regular):
+        regression_regularization(Xs, y)
 
     return result

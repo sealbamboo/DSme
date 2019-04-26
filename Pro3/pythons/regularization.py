@@ -1,5 +1,5 @@
 
-def regression-regularization(X, y):
+def regression_regularization(Xs, y):
     #---------------------------------------------
     # RidgeCV
     #----------------------------------------------
