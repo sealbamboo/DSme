@@ -1,38 +1,6 @@
-# # Create subplots
-# fix, ax = plt.subplots(4,4, figsize=(17,14))
-# plt.subplots_adjust(hspace=0.2)
-
-# # Create a list of drugs to iterate over the subplots
-# drug_name = list(drug_percent_use.columns)[2:]
-
-# # Loop for creating subplots for each drug
-# plot_count = 0
-# for i in range(4):
-#     for j in range(4):
-#         if plot_count < 13:
-#             sns.barplot(x=drug_percent_use['sample_age'], y=drug_percent_use[drug_name[plot_count]],
-#                         orient='v', ax=ax[i][j], color='c')
-#         plot_count += 1        
-
-
-
-
-# # Create subplots
-# fix, ax = plt.subplots(4,4, figsize=(17,14))
-# plt.subplots_adjust(hspace=0.2)
-
-# # Create a list of drugs to iterate over the subplots
-# drug_name = list(drug_median_use.columns)[2:]
-
-# # Loop for creating subplots for each drug
-# plot_count = 0
-# for i in range(4):
-#     for j in range(4):
-#         if plot_count < 13:
-#             sns.barplot(x=drug_median_use['sample_age'], y=drug_median_use[drug_name[plot_count]],
-#                         orient='v', ax=ax[i][j], color='C2')
-#         plot_count += 1
-
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
 
 # Cross-Validation-Train-Test-Split-Solutions
 def correlation_heat_map(df):
@@ -80,25 +48,50 @@ def m_box_plot(df):
 
 
 #---------------------------------------------------------------------
-def plotting_features_vs_target(features, x, y):
+def plotting_features(x, color='C1'):
+
+    # Pre-caculate:
+    features = x.columns
+    num_feature = len(features)
+
     # define number of subplot
     columns = 3
-    num_feature = len(features)
     rows = round(num_feature/columns)
 
-    f, axes = plt.subplots(rows, columns, figsize=(17,14))
-    plt.subplots_adjust(hspace=0.2, wspace=0.7)
-
+    fig, axes = plt.subplots(rows, columns, figsize=(16,12))
+    plt.subplots_adjust(hspace=0.4)
+    
     # plotting
-    # for i in range(0, num_feature):
-        # print("-i: ", i,"\n")
-        # axes[i].scatter(x[features[i]], y)
-        # axes[i].set_title(features[i])
     plot_count = 0
-    for i in range(columns):
+    for i in range(rows):
         for j in range(columns):
-            if plot_count < num_feature:
-                sns.barplot(x=x[features[i]], y=y, orient='v', ax=axes[i][j], color='c')
+            if plot_count <= num_feature:
+                sns.distplot(x[features[plot_count]],kde=False, ax=axes[i][j], color= color )
+            plot_count += 1     
+        
+    plt.show()
+
+
+#---------------------------------------------------------------------
+def plotting_linear_w_features(x,y,df):
+
+    # Pre-caculate:
+    features = x.columns
+    num_feature = len(features)
+
+    # define number of subplot
+    columns = 2
+    rows = round(num_feature/columns)
+
+    # fig, axes = plt.subplots(rows, columns, figsize=(16,12))
+    # plt.subplots_adjust(hspace=0.4)
+    
+    # plotting
+    plot_count = 0
+    for i in range(rows):
+        for j in range(columns):
+            if plot_count <= num_feature:
+                sns.lmplot(x=features[plot_count], y=y, data=df, col=y, aspect=0.2)
             plot_count += 1     
         
     plt.show()

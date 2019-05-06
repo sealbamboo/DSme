@@ -1,3 +1,7 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression, Lasso, Ridge, ElasticNet, RidgeCV, LassoCV, ElasticNetCV
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split, cross_val_score, cross_val_predict
 
 def regression_regularization(Xs, y):
     #---------------------------------------------
@@ -6,7 +10,7 @@ def regression_regularization(Xs, y):
     # optimal value for Ridge regression alpha using RidgeCV
     ridge_alphas = np.logspace(0, 5, 200)
 
-    optimal_ridge = RidgeCV(alphas=ridge_alphas, cv=10)
+    optimal_ridge = RidgeCV(alphas=ridge_alphas, cv=30)
     optimal_ridge.fit(Xs, y)
 
     print("Ridge Alpha: ", optimal_ridge.alpha_)
@@ -33,7 +37,7 @@ def regression_regularization(Xs, y):
     # Cross-validate the Lasso regression
     lasso = Lasso(alpha=optimal_lasso.alpha_)
 
-    lasso_scores = cross_val_score(lasso, Xs, y, cv=10)
+    lasso_scores = cross_val_score(lasso, Xs, y, cv=30)
 
     print(lasso_scores)
     print("LassoCV Mean: ", np.mean(lasso_scores))

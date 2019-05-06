@@ -1,4 +1,6 @@
 /Outcome
 /pythons/__pycache__
-.ipynb_checkpoints
+/backup
+/backup/**
+.ipynb_checkpoints/
 .gitignore
