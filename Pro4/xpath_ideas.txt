@@ -1,0 +1,51 @@
+### ===============================Regex
+# Job ID
+([0-9]{8})
+
+
+
+### =============================== Seek
+# Title
+>>> 'article section h1'
+
+# Company
+>>> 'article section h2 span:nth-of-type(2)'
+
+# Template
+>>> //div[@data-automation="mobileTemplate"]
+
+# Template ul
+>>> //div[@data-automation="mobileTemplate"]/ul
+
+# Template p
+>>> //div[@data-automation="mobileTemplate"]/p
+
+# Region
+>>> //section[@role="region"] span strong
+
+### The Company | The Role | The Person
+
+### Responsibilities | Minimum Requirements | Minimum Requirements
+
+
+### ===============================Indeed
+# url
+>>> div[@class="title"] a ==> .get_attribute("href")
+
+# Title
+>>> div[@class="title"]/a/text()
+
+# Company
+>>> //*[@class="company"]/a/text()
+
+# Location
+>>> div[@class="location"]/
+
+# Salary
+>>> div[@class="salarySnippet"]/span/
+
+
+
+
+
+
