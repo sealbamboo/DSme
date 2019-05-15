@@ -4,5 +4,8 @@ backup/
 .ipynb_checkpoints/
 .gitignore
 
+# Project 4 folder
+/Pro4/jobs_csv/
+/Pro4/jobs_backup/
 /Pro4/training/
-
+/Pro4/nlp_preprocessing.ipynb
