@@ -39,3 +39,7 @@ CONTEXT_MAPPING_DICTIONARY = {
     'Finance': ['Finance','Financial'],
     'Account': ['Account','Account Manager','Product Manager']
 }  
+
+# Location
+KEYWORDS = ['Data analytics','Data Science','Data Scientist']
+LOCATIONS = ['Sydney','Melbourne','Brisbane']
